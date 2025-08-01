@@ -1,0 +1,7 @@
+# Node modules (do not push heavy deps)
+node_modules/
+
+# Environment variables
+.env
+
+hello.js
