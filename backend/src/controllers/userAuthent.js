@@ -20,8 +20,11 @@ const register=async(req,res)=>{
 
 
         const user= await User.create(req.body);
-        const token=jwt.sign({_id:user._id,emailId:emailId,role:"user"}, process.env.JWT_KEY,{expiresIn:60*60});
-        res.cookie('token', token,{maxAge:60*60*1000});
+        const token=jwt.sign({_id:user._id,emailId:emailId,role:"user"}, process.env.JWT_KEY,{expiresIn:60*60*5});
+        res.cookie('token', token,{ httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      maxAge: 60 * 60 * 5 * 1000 });
         const reply={
         firstName: user.firstName,
         emailId:user.emailId,
@@ -64,8 +67,11 @@ const login=async(req,res)=>{
         role:user.role,
         avatarUrl: user.avatarUrl
      }
-     const token=jwt.sign({_id:user._id,emailId:emailId,role:user.role}, process.env.JWT_KEY,{expiresIn:60*60});
-        res.cookie('token', token,{maxAge:60*60*1000});
+     const token=jwt.sign({_id:user._id,emailId:emailId,role:user.role}, process.env.JWT_KEY,{expiresIn:60*60*5});
+        res.cookie('token', token,{ httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      maxAge: 60 * 60 * 5 * 1000 });
         res.status(201).json({
             user:reply,
             message:"Loggin Succesfully"
