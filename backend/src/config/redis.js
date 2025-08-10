@@ -1,4 +1,5 @@
 const { createClient } =require('redis');
+require("dotenv").config();
 
 const redisClient = createClient({
     username: 'default',
@@ -8,6 +9,7 @@ const redisClient = createClient({
         port: 18354
     }
 });
+
 redisClient.on('error', (err) => {
   console.error('❌ Redis Error:', err.message);
 });
