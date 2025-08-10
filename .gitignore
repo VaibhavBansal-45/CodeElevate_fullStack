@@ -14,3 +14,17 @@
 # OS-specific
 .DS_Store
 Thumbs.db
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs
+*.log
+
+# dotenv files
+.env
+backend/.env
+frontend/.env
+
+# Build output
+frontend/dist/
