@@ -36,12 +36,13 @@ app.use('/profile', profileRoutes);
 //     throw new Error(err.message);
 
 // })
+const port=process.env.PORT || 3000
 
 const InitializeConnection=async()=>{
     try{
         await Promise.all([main(), redisClient.connect()]);
         console.log("DB connected");
-        app.listen(process.env.PORT,()=>{
+        app.listen(port,()=>{
                    console.log("Server listening at port no"+ process.env.PORT)})
 
     }
