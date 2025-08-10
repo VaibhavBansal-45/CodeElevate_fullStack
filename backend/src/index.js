@@ -12,7 +12,7 @@ const aiRouter = require('./routes/aiChatting');
 const profileRoutes=require('./routes/userProfile')
 
 app.use(cors({
-    origin: 'https://code-elevate-frontend.vercel.app',
+    origin: 'https://code-elevate-full-stack.vercel.app',
     credentials:true
 }))
 
