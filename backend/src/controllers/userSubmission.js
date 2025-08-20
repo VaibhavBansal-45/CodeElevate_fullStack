@@ -42,6 +42,7 @@ const { getLanguageById,submitBatch,submitToken } = require("../utills/problemUt
     const submitResult = await submitBatch(submissions);
     const tokens       = submitResult.map(r => r.token);
     const testResult   = await submitToken(tokens);
+    console.log(testResult)
 
     // aggregate results
     let testCasePassed = 0, runtime = 0, memory = 0;
