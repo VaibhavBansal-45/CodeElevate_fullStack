@@ -5,8 +5,7 @@
   problem: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'problem',
-    required: true,
-    default:[]
+    default:null
   },
   solvedAt: {
     type: Date,
