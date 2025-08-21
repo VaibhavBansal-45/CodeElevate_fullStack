@@ -27,6 +27,10 @@ app.use('/submission', submitRouter)
 app.use('/ai',aiRouter)
 app.use('/profile', profileRoutes);
 
+app.get("/keep-alive", (req, res) => {
+  res.send("I am alive!");
+});
+
 // main()
 // .then(async()=>{
 //     app.listen(process.env.PORT,()=>{
